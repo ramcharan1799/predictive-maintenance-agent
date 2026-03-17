@@ -30,6 +30,7 @@ Always structure your answer with:
 
 Be specific with numbers and thresholds where relevant."""
 
+    client = get_client()
     response = client.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[
@@ -89,6 +90,7 @@ Provide:
 3. Which parameters are concerning and why
 4. Immediate recommended actions"""
 
+    client = get_client()
     response = client.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[{"role": "user", "content": prompt}],
@@ -120,6 +122,7 @@ IMMEDIATE ACTION: [what to do right now]
 MAINTENANCE PLAN: [scheduled actions with timeframes]
 FAILURE RISK: [estimated time to failure if unaddressed]"""
 
+    client = get_client()
     response = client.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=[
